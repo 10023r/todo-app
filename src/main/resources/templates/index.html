@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/themes/dark-hive/jquery-ui.min.css"
+          integrity="sha512-PCAjKnOEYM3QsqwVR1juP14F928N95V6NUAQrcbS1RHxE5BGpW4gadL6FdeefvXhkUy7+GDUrFQbpGFeFvaumg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.0/themes/dark-hive/theme.min.css"
+          integrity="sha512-5aU1CHwpMepAVCoQQF1Wpuj8RNR3vaNXKYxFpLpxe8ieWBbe71MOgUAVYH+hRcQwSL0ufS90IHq+JZCVxUry5g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+            integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<header class="topnav">
+    <input id="searchInput" type="text" placeholder="Поиск.." name="search">
+    <button id="searchBtn">Искать</button>
+</header>
+<div class="main">
+    <div class="sidebar">
+        <button id="today-todo">Сегодня</button>
+        <button id="week-todo">На неделю</button>
+        <div type="text" id="datepicker"></div>
+        <label class="checkbox-container">
+            <input id="only-finished-todo" type="checkbox"> Только невыполненные
+        </label>
+    </div>
+    <div class="content">
+        <div class="content-info">
+                <span id="todo-list-info"></span>
+            <div class="sorter-container">
+                <input type="checkbox" id="sort-checkbox">
+                <label for="sort-checkbox"></label> Сортировать по дате
+            </div>
+        </div>
+        <div class="todos-container"></div>
+    </div>
+    <div id="dialog">
+        <div class="dialog-container">
+            <div class="dialog-info">
+                <span id="dialog-date-info">
+                </span>
+                <label class="check-todo-container">
+                    <input class="check-todo" id="check-dialog-todo" type="checkbox" disabled>
+                </label>
+            </div>
+            <hr>
+            <textarea id="dialog-description" rows="13" disabled></textarea>
+            <button id="finish-editing-todo">Готово</button>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="js/Api.js"></script>
+<script src="js/MyDateParser.js"></script>
+<script src="js/Todo.js"></script>
+<script src="js/datepicker.js"></script>
+<script src="js/script.js"></script>
+<script src="js/tools.js"></script>
+</body>
+</html>
