@@ -1,8 +1,4 @@
 
-function sortBy(array, key, order) {
-    return array
-}
-
 function renderFormattedTodoList(arr) {
     let formattedString = []
     arr.forEach(el => {

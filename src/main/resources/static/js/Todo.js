@@ -10,7 +10,7 @@ class Todo {
         return template.content.childNodes
     }
 
-    getFormattedDateTime(d) {
+    getFormattedDateTime() {
         let date = new Date(this.todo.date)
         let hours = ("0" + date.getHours()).slice(-2)
         let minutes = ("0" + date.getMinutes()).slice(-2)
@@ -37,7 +37,7 @@ class Todo {
             </div>
         `
         let res = Todo.htmlToNodes(template)[1]
-        res.addEventListener("click", ev => {
+        res.addEventListener("click", () => {
             let dialog = $("#dialog")
             this.prepareDialogInfo(dialog)
             dialog.dialog("open")
@@ -49,7 +49,7 @@ class Todo {
         $("#dialog-date-info").text(this.getFormattedDateTime(this.todo.date))
         $('#check-dialog-todo').prop('checked', this.todo.status)
         $("#dialog-description").text(this.todo.fullDesc)
-        $("#finish-editing-todo").click(ev => {
+        $("#finish-editing-todo").click(() => {
             $("#dialog").dialog('close')
         })
         dialog.dialog( "option", "title", this.todo.name)

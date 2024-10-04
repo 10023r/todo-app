@@ -3,10 +3,9 @@ let selectedDates = []
 $(function () {
     $("#datepicker").datepicker({
         onSelect: function (dateText, inst) {
-            //  reset other btns
             processOnDateSelect(dateText)
-            let rangeStart = null
-            let rangeEnd = null
+            let rangeStart
+            let rangeEnd
             if (selectedDates.length === 0) {
                 let from = new Date()
                 let to = new Date()
@@ -40,10 +39,6 @@ $(function () {
                 rangeStart = new Date(from)
                 rangeEnd = new Date(to)
             }
-            let sortedDates = selectedDates.sort((a, b) => {
-                let x = new Date(a), y = new Date(b)
-                return ((x < y) ? -1 : ((x > y) ? 1 : 0))
-            })
 
             resetStates("", `${rangeStart.toLocaleDateString()} - ${rangeEnd.toLocaleDateString()}`, null, false)
         },
